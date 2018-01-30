@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quimera.erp;
+package view;
 
+import DAO.UsuarioDAO;
+import bean.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import quimera.erp.Conexao;
 
 /**
  *
@@ -42,6 +45,7 @@ public class frmLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("..:: Quimera ERP ::..");
+        setResizable(false);
 
         jLabel1.setText("Usuário:");
 
@@ -91,7 +95,10 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        Connection conn = Conexao.abrir();
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario usuario = new Usuario();
+        
+        /*Connection conn = Conexao.abrir();
         try{String sql = "SELECT * FROM usuario WHERE NomeUsua = '" + tfUsuario.getText() + "';";
             PreparedStatement stm = conn.prepareStatement(sql);
             
@@ -109,6 +116,7 @@ public class frmLogin extends javax.swing.JFrame {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Erro de conexão com banco " + e);
         }
+        */
         
     }//GEN-LAST:event_btnLoginActionPerformed
 

@@ -5,6 +5,8 @@
  */
 package quimera.erp;
 
+import view.frmLogin;
+
 /**
  *
  * @author Leandro
